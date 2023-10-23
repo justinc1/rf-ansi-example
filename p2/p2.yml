@@ -1,0 +1,19 @@
+---
+- name: Example hello
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  vars:
+    # cwd: 
+    repo_dir: "{{repo_main_dir}}/p2"
+    plan_file: cloud.tfplan
+  tasks:
+    - name: Apply plan
+      cloud.terraform.terraform:
+        project_path: "{{ repo_dir }}"
+        state: present
+        force_init: true  # ??
+        variables:
+          cloud_terraform_integration_id: jcvnet
+          cloud_terraform_integration_resource_group: jcrg
+          cloud_terraform_integration_location: westeurope

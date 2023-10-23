@@ -1,0 +1,9 @@
+.env*
+.venv*
+ansible_collections
+
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+
